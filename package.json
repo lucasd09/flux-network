@@ -1,0 +1,25 @@
+{
+  "name": "hono-template",
+  "version": "1.0",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy --minify"
+  },
+  "dependencies": {
+    "@hono/zod-validator": "^0.4.3",
+    "@libsql/client": "^0.15.1",
+    "@types/bun": "^1.2.6",
+    "@types/jsonwebtoken": "^9.0.9",
+    "@types/node": "^22.13.13",
+    "argon2": "^0.41.1",
+    "drizzle-orm": "^0.41.0",
+    "hono": "^4.7.5",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250214.0",
+    "drizzle-kit": "^0.30.5",
+    "tsx": "^4.19.3",
+    "wrangler": "4"
+  }
+}

@@ -1,5 +1,4 @@
 import { BaseService } from "../../lib/base/base.service";
-import { NotFoundError } from "../../lib/utils/errors";
 import { User, CreateUserDto, UpdateUserDto, ReadUserDto } from "./user.model";
 import { UserRepository } from "./user.repository";
 import { AppContext } from "../../lib/utils/types";

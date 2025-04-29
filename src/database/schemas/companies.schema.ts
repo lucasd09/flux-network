@@ -7,18 +7,18 @@ import { teamsTable } from "./teams.schema";
 import { rolesTable } from "./roles.schema";
 
 export const companiesTable = sqliteTable("companies", {
-	id: id(),
-	name: text("name", { length: 255 }).notNull(),
-	slug: text("slug", { length: 100 }).notNull().unique(),
-	logo: text("logo", { length: 255 }),
-	active: integer("active", { mode: "boolean" }).default(true),
-	createdAt: createdAt(),
-	updatedAt: updatedAt(),
+  id: id(),
+  name: text("name", { length: 255 }).notNull(),
+  slug: text("slug", { length: 100 }).notNull().unique(),
+  logo: text("logo", { length: 255 }),
+  active: integer("active", { mode: "boolean" }).default(true),
+  createdAt: createdAt(),
+  updatedAt: updatedAt(),
 });
 
 export const companiesRelations = relations(companiesTable, ({ many }) => ({
-	users: many(usersTable),
-	teams: many(teamsTable),
-	projects: many(projectsTable),
-	roles: many(rolesTable),
+  users: many(usersTable),
+  teams: many(teamsTable),
+  projects: many(projectsTable),
+  roles: many(rolesTable),
 }));

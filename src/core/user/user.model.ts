@@ -1,4 +1,4 @@
-import { InferSelectModel, InferInsertModel } from "drizzle-orm";
+import { InferSelectModel } from "drizzle-orm";
 import { usersTable } from "../../database/schemas";
 import { z } from "zod";
 export type User = InferSelectModel<typeof usersTable>;
@@ -16,6 +16,7 @@ export const createUserSchema = z.object({
   email: z.string().email(),
   password: z.string(),
   avatar: z.string().optional(),
+  companyId: z.string(),
 });
 
 export const updateUserSchema = z.object({

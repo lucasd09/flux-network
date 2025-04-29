@@ -17,7 +17,7 @@ export class UserRepository extends BaseRepository<
 
   async create(c: AppContext, data: CreateUserDto): Promise<User> {
     const passwordHash = await hashPassword(data.password);
-    
+
     const db = c.get("db");
 
     const [result] = await db
@@ -27,6 +27,7 @@ export class UserRepository extends BaseRepository<
         id: usersTable.id,
         name: usersTable.name,
         email: usersTable.email,
+        companyID: usersTable.companyId,
       });
 
     return result as User;
